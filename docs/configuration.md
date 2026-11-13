@@ -136,7 +136,8 @@ predictive = true            # show search suggestions as you type
 ```toml
 [ui]
 theme = "ytm-dark"           # startup default Textual theme; a theme picked at runtime lasts for that session only
-album_art = true             # show colored half-block album art in playback bar
+album_art = true             # show album art in playback bar
+album_art_protocol = "auto"  # auto, sixel, kitty or blocks (colored half-blocks)
 progress_style = "block"     # block or line
 sidebar_width = 30
 col_index = 4                # 0 = auto-fill width
@@ -154,6 +155,8 @@ show_queue_source = true     # show "Generated from: …" header on radio/discov
 ```
 
 `theme` is the startup default. Changing theme from Textual's command palette (`Ctrl+P` → `Theme`) updates the current session only and is not saved. To make the active theme the new default, run `Ctrl+P` → `Theme: Set Current as Default`, which writes it to `[ui] theme` in `config.toml`.
+
+`album_art_protocol = "auto"` asks the terminal at startup whether it supports Sixel (iTerm2, WezTerm, foot, Konsole, Windows Terminal) or the Kitty graphics protocol (kitty, Ghostty) and draws real album art with it; terminals with neither get the colored half-block art. Set `"sixel"` or `"kitty"` to force a protocol, or `"blocks"` to keep half-blocks everywhere. Inside tmux, `auto` keeps half-blocks: tmux redraws and rescales images on its own, which makes the art flicker, jump or scroll the screen. Forcing `"sixel"` there needs tmux 3.4+ built with Sixel support, and forcing `"kitty"` needs `set -g allow-passthrough on`; expect artifacts either way.
 
 Per-playlist Shuffle lock state (set via the `Shuffle lock` toggle in the
 Library page playlist header) is persisted separately to

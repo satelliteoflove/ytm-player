@@ -50,6 +50,7 @@ dependencies = [
     "click>=8.1.0",
     "packaging>=21.0",
     "Pillow>=10.0",
+    "textual-image>=0.14.2",
     "pynput>=1.7.6; sys_platform == 'win32'",
     "pyobjc-framework-MediaPlayer>=11.0; sys_platform == 'darwin'",
     "pyobjc-framework-Quartz>=11.0; sys_platform == 'darwin'",

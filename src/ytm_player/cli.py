@@ -207,6 +207,10 @@ def main(ctx: click.Context, compact_json: bool, debug: bool) -> None:
         _faulthandler_log = (CRASH_DIR / "faulthandler.log").open("ab", buffering=0)
         faulthandler.enable(file=_faulthandler_log, all_threads=True)
 
+        from ytm_player.ui.widgets.album_art import init_graphics
+
+        init_graphics(settings.ui.album_art_protocol)
+
         from ytm_player.app import YTMPlayerApp
 
         app = YTMPlayerApp()
