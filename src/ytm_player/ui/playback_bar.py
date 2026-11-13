@@ -311,7 +311,7 @@ class PlaybackBar(Widget):
     }
     PlaybackBar #pb-art {
         width: 10;
-        height: 3;
+        height: 2;
         margin: 0 1 0 0;
     }
     PlaybackBar #pb-content {

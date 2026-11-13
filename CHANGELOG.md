@@ -6,6 +6,12 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ---
 
+### Unreleased
+
+**Fixes**
+
+- **Playback bar album art was cropped**: the footer bar covers the bottom row of the playback bar, so the art's third row was never visible and the half-block cover lost its bottom third. The art is now two rows tall, matching the area that is actually shown.
+
 ### v2.2.0 (2026-11-09)
 
 **New features**

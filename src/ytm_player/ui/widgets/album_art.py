@@ -100,7 +100,7 @@ class AlbumArt(Widget):
         width: 12;
         height: 3;
         min-width: 8;
-        min-height: 3;
+        min-height: 2;
     }
     """
 
